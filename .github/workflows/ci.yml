@@ -15,6 +15,12 @@ jobs:
 
       - name: Check HTML file
         run: test -f index.html
+        
+      - name: Intentional failure test
+        run: |
+          echo "Testing failure handling..."
+          exit 1
+
 
       - name: Print success
         run: echo "My first GitHub Actions workflow is working!"
