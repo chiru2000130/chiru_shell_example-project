@@ -1,11 +1,19 @@
 
+
 pipeline {
     agent any
 
     stages {
-        stage('Hello Jenkins') {
+        stage('Checkout') {
             steps {
-                echo 'Hello Jenkins!'
+                echo 'Source code checkout complete'
+            }
+        }
+
+        stage('HTML Validation') {
+            steps {
+                sh 'test -f index.html'
+                echo 'HTML file exists!'
             }
         }
 
@@ -17,3 +25,4 @@ pipeline {
         }
     }
 }
+
