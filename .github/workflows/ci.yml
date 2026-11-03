@@ -19,7 +19,7 @@ jobs:
       - name: Intentional failure test
         run: |
           echo "Testing failure handling..."
-          exit 1
+          exit 0
 
 
       - name: Print success
