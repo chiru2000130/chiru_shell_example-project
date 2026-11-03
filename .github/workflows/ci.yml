@@ -1,0 +1,20 @@
+
+name: My First GitHub Actions CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check HTML file
+        run: test -f index.html
+
+      - name: Print success
+        run: echo "My first GitHub Actions workflow is working!"
